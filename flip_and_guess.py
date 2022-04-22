@@ -26,6 +26,9 @@ def scoring():
     score -= 1
   else:
     score += 1
+
+
+def print_score():
   if (score < 0):
     print(dt + ' -' + score)
   elif (score == 0):
@@ -35,7 +38,7 @@ def scoring():
 
 schedule.every(1).minutes.do(flip)
 schedule.every(1).minutes.do(guess)
-schedule.every(1).minutes.do(scoring)
+schedule.every(1).minutes.do(print_score)
 while True:
   schedule.run_pending()
   time.sleep(1)
