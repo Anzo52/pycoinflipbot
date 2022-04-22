@@ -21,7 +21,7 @@ def guess():
     k = random.randint(0,1)
     coin_guess = k
   
-def score():
+def scoring():
   if (abs(coin_flip - coin_guess)) > 0:
     score -= 1
   else:
@@ -35,7 +35,7 @@ def score():
 
 schedule.every(1).minutes.do(flip)
 schedule.every(1).minutes.do(guess)
-schedule.every(1).minutes.do(score)
+schedule.every(1).minutes.do(scoring)
 while True:
   schedule.run_pending()
   time.sleep(1)
