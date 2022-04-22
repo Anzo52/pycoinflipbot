@@ -1,0 +1,6 @@
+initialize score at 0
+Initialize 60 second timer
+Initialize coin-flip: random 0 or 1 every 60 seconds
+Initialize coin-guess: random 0 or 1 every 60 seconds
+if abs diff between guess and flip is > 0 score -= 1
+else score += 1
