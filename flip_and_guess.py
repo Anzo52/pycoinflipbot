@@ -12,12 +12,12 @@ coin_guess = 0
 dt = datetime.datetime.now().time()
 
 def flip():
-  for _ in range(n):
+  for _ in range(1):
     k = random.randint(0, 1)
     coin_flip = k
     
 def guess():
-  for _ in range(n):
+  for _ in range(1):
     k = random.randint(0,1)
     coin_guess = k
   
