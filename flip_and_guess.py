@@ -1,8 +1,8 @@
+from __future__ import print_function
 import datetime
 import random
 import schedule
 import time
-from __future__ import print_function
 from random import randint, choice
 
 
@@ -36,6 +36,6 @@ def score():
 schedule.every(1).minutes.do(flip)
 schedule.every(1).minutes.do(guess)
 schedule.every(1).minutes.do(score)
-while(true):
+while True:
   schedule.run_pending()
   time.sleep(1)
