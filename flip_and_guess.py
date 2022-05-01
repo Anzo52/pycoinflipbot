@@ -1,5 +1,4 @@
 from __future__ import print_function
-import datetime
 import random
 import schedule
 import time
@@ -9,7 +8,7 @@ from random import randint, choice
 score = 0
 coin_flip = 0
 coin_guess = 0
-dt = datetime.datetime.now().time()
+dt = time.ctime()
 
 def flip():
   for _ in range(1):
@@ -32,12 +31,7 @@ def scoring():
 
 
 def print_score():
-  if (score < 0):
-    print(dt + ' -' + score)
-  elif (score == 0):
-    print(dt + ' ' + score)
-  else:
-    print(dt + ' +' + score)
+    print(dt + score)
 
 schedule.every(1).minutes.do(flip)
 schedule.every(1).minutes.do(guess)
