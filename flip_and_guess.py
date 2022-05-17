@@ -9,7 +9,6 @@ score = 0
 coin_flip = 0
 coin_guess = 0
 dt = time.ctime()
-dtstr = str(dt)
 
 def flip():
   for _ in range(1):
@@ -32,7 +31,7 @@ def scoring():
 
 
 def print_score():
-    print(dtstr + " " + score)
+    print(dt, score)
 
 schedule.every(1).minutes.do(flip)
 schedule.every(1).minutes.do(guess)
