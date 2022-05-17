@@ -1,4 +1,4 @@
-# pycoinflip
+# pycoinflipbot
 Python coin-flip and coin-guessing bot
 
 ## Install/Usage
