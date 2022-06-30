@@ -2,40 +2,36 @@ from __future__ import print_function
 import random
 import schedule
 import time
-from random import randint, choice
 
+global score1
+score1 = 0
 
-score = 0
-coin_flip = 0
-coin_guess = 0
 dt = time.ctime()
 
-def flip():
-  for _ in range(1):
-    k = random.randint(0, 1)
-    coin_flip = k
-    return coin_flip
-    
 def guess():
-  for _ in range(1):
-    k = random.randint(0,1)
-    coin_guess = k
-    return coin_guess
+  guess = random.randint(0, 1)
+  return guess
+
+def flip():
+  flip = random.randint(0, 1)
+  return flip
+
+def everything():
+  global score1
   
-def scoring():
-  if (abs(coin_flip - coin_guess)) > 0:
-    score -= 1
+  guess1 = guess()
+  flip1 = flip()
+  if flip1 == guess1:
+    score1 = score1 + 1
   else:
-    score += 1
-  return score
+    score1 = score1 - 1
+  print(f"{dt}, Score: {score1},")
 
 
-def print_score():
-    print(dt, score)
 
-schedule.every(1).minutes.do(flip)
-schedule.every(1).minutes.do(guess)
-schedule.every(1).minutes.do(print_score)
+schedule.every(0.01).minutes.do(everything)
+
+
 while True:
   schedule.run_pending()
   time.sleep(1)
